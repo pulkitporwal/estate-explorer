@@ -22,7 +22,7 @@ const MyListings = () => {
     const fetchListings = async () => {
       try {
         const res = await fetch(
-          `/api/user/mylistings/${currentUser.userData._id}`
+          `/api/user/mylistings/${currentUser?.userData._id}`
         );
         if (!res.ok) {
           throw new Error('Failed to fetch listings');
