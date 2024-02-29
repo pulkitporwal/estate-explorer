@@ -142,7 +142,7 @@ const Listing = () => {
 							</div>
 							<div>
 								{listingData.listingData.userRef !==
-								currentUser.userData.id ? (
+								currentUser?.userData.id ? (
 									<div className="mt-5 flex items-center justify-center">
 										<button
 											hidden={showContactBtn}
