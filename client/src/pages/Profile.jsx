@@ -95,7 +95,7 @@ const Profile = () => {
 		try {
 			dispatch(updateUserStart());
 			const res = await fetch(
-				`/api/user/update/${currentUser.userData._id}`,
+				`/api/user/update/${currentUser?.userData._id}`,
 				{
 					method: "POST",
 					headers: {
@@ -122,7 +122,7 @@ const Profile = () => {
 			dispatch(deleteUserStart());
 
 			const res = await fetch(
-				`/api/user/delete/${currentUser.userData._id}`,
+				`/api/user/delete/${currentUser?.userData._id}`,
 				{
 					method: "DELETE",
 				}
@@ -179,14 +179,14 @@ const Profile = () => {
 					className="w-[150px] h-[150px] object-cover object-center border[0.5px] p-3 rounded-full"
 					src={
 						formData.avatar ||
-						(currentUser.userData && currentUser.userData.avatar) ||
+						(currentUser?.userData && currentUser?.userData.avatar) ||
 						(currentUser.restUpdatedUser &&
 							currentUser.restUpdatedUser.avatar)
 					}
 					alt={
 						formData.username ||
-						(currentUser.userData &&
-							currentUser.userData.username) ||
+						(currentUser?.userData &&
+							currentUser?.userData.username) ||
 						(currentUser.restUpdatedUser &&
 							currentUser.restUpdatedUser.username)
 					}
@@ -213,8 +213,8 @@ const Profile = () => {
 					onChange={handleChange}
 					defaultValue={
 						formData.username ||
-						(currentUser.userData &&
-							currentUser.userData.username) ||
+						(currentUser?.userData &&
+							currentUser?.userData.username) ||
 						(currentUser.restUpdatedUser &&
 							currentUser.restUpdatedUser.username)
 					}
@@ -227,7 +227,7 @@ const Profile = () => {
 					type="email"
 					defaultValue={
 						formData.email ||
-						(currentUser.userData && currentUser.userData.email) ||
+						(currentUser?.userData && currentUser?.userData.email) ||
 						(currentUser.restUpdatedUser &&
 							currentUser.restUpdatedUser.email)
 					}
